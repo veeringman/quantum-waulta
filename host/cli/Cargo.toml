@@ -1,0 +1,8 @@
+[package]
+name = "waulta-cli"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+# add PSBT, BIP32 crates…

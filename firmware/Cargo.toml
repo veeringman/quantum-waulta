@@ -1,0 +1,9 @@
+[package]
+name = "waulta-firmware"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+embedded-hal = "0.2"
+esp-idf-hal = { version = "0.30", features = ["driver"] }
+# add your crypto crates…

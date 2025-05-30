@@ -1,0 +1,24 @@
+# simple CI: build firmware and CLI
+name: CI
+on: [push,pull_request]
+jobs:
+  build-firmware:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - name: Build firmware
+        run: cargo build --manifest-path firmware/Cargo.toml
+  build-cli:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - name: Build host CLI
+        run: cargo build --manifest-path host/cli/Cargo.toml
